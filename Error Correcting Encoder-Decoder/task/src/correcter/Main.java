@@ -80,7 +80,6 @@ public class Main {
             byte[] decodedBytes = new byte[bytes.length / 2];
             for (int i = 0; i < bytes.length; i += 2) {
                 byte decodedByte = 0;
-                //tried a different approach here... it works, albeit probably not the nicest way to do it
                 for (int j = 0; j < 8; j++) {
                     if (j < 4) {
                         decodedByte = (byte) (decodedByte ^ ((correctByte(bytes[i]) << (j + 8) / 3) & (128 >> j))); //shifts: 2-3-3-3
